@@ -1,11 +1,17 @@
 <?php
 $ipsum="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porttitor sed metus vitae porttitor. Suspendisse massa nulla, consequat et pulvinar tincidunt, dapibus in odio. Nunc id pretium nunc. Aliquam vulputate congue felis. In semper cursus ligula, vitae semper nulla aliquet in. Quisque ut mi bibendum quam congue dictum non ac dolor. Cras in purus id felis tempor interdum ut a nulla. Vivamus nec eleifend nulla. Nulla ultricies mi quis tellus blandit semper. Maecenas lacinia ac neque quis congue. Mauris ultrices quam ullamcorper scelerisque consequat. Nullam cursus quam sed tortor volutpat hendrerit. Donec eleifend tincidunt sapien, non vulputate tellus venenatis pretium. ";
 $array = explode(' ', $ipsum);
+var_dump($array);
 
-echo ("słowa z e:");
-foreach ($array as $e ){
-    if(preg_match('/\b(\w*e\w*)\b/', $e, $match) == true){
-        echo "$match[0] </br>";
+
+
+
+$wyszukiwanie="";
+sort($array, SORT_NATURAL | SORT_FLAG_CASE);
+
+foreach ($array as $w ){
+    if(preg_match("/\b(\w*$wyszukiwanie\w*)\b/", $w, $match) == true){
+        echo " $match[0] </br>";
     }
 
 }
